@@ -1,7 +1,7 @@
 {
   "name": "jolt",
   "version": "0.1.0",
-  "description": "A JavaScript framework for building lighting fast web apps.",
+  "description": "A JavaScript framework for building lightning fast web apps.",
   "main": "dist/cjs/jolt.js",
   "module": "dist/esm/jolt.js",
   "browser": "dist/umd/jolt.js",
