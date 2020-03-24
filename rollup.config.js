@@ -6,17 +6,17 @@ export default {
     input: "src/main.js",
     output: [
         {
-            file: "dist/esm/jolt.js",
+            file: "dist/jolt.esm.js",
             format: "esm",
             banner: "/* Copyright (c) 2020 Outwalk Studios */"
         },
         {
-            file: "dist/cjs/jolt.js",
+            file: "dist/jolt.cjs.js",
             format: "cjs",
             banner: "/* Copyright (c) 2020 Outwalk Studios */"
         },
         {
-            file: "dist/umd/jolt.js",
+            file: "dist/jolt.umd.js",
             format: "umd",
             name: "Jolt",
             plugins: [

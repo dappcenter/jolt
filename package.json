@@ -1,11 +1,11 @@
 {
   "name": "jolt",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "A JavaScript framework for building lightning fast web apps.",
-  "main": "dist/cjs/jolt.js",
-  "module": "dist/esm/jolt.js",
-  "browser": "dist/umd/jolt.js",
-  "unpkg": "dist/umd/jolt.js",
+  "main": "dist/jolt.cjs.js",
+  "module": "dist/jolt.esm.js",
+  "browser": "dist/jolt.umd.js",
+  "unpkg": "dist/jolt.umd.js",
   "scripts": {
     "build": "rollup -c",
     "docs": "jsdoc -r src README.md -d docs"
@@ -21,8 +21,7 @@
     "crud"
   ],
   "files": [
-    "./dist",
-    "./resources"
+    "dist"
   ],
   "repository": {
     "type": "git",
