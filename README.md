@@ -21,6 +21,7 @@
 ## Installation
 Jolt is designed to fit into your existing workflows with no hassle. </br>
 You can install Jolt using [npm](https://www.npmjs.com/package/jolt) or add it to your page using a [CDN](https://unpkg.com/jolt) and script tag.
+When installing Jolt using a script tag, all Jolt features are in a `Jolt` namespace.
 
 Install using [npm](https://www.npmjs.com/package/jolt):
 ```bash
