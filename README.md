@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./resources/jolt-logo.svg" alt="Jolt" width="400px" height="300px" />
+    <img src="https://raw.githubusercontent.com/outwalk-studios/jolt/master/resources/jolt-logo.svg" alt="Jolt" width="400px" height="300px" />
 </div>
 
 <div align="center">
