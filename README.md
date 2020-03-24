@@ -3,7 +3,7 @@
 </div>
 
 <div align="center">
-    <p><strong>A JavaScript framework for building lighting fast web apps.</strong></p>
+    <p><strong>A JavaScript framework for building lightning fast web apps.</strong></p>
     <p>Build responsive web apps for Desktop and Mobile platforms.</p>
     <a href="#">
         <img src="https://github.com/outwalk-studios/jolt/workflows/build/badge.svg" alt="Current build status of Jolt">
