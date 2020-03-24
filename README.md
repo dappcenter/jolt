@@ -6,7 +6,7 @@
     <p><strong>A JavaScript framework for building lighting fast web apps.</strong></p>
     <p>Build responsive web apps for Desktop and Mobile platforms.</p>
     <a href="#">
-        <img src="https://github.com/outwalk-studios/jolt/workflows/nodejs-workflow/badge.svg" alt="Current build status of Jolt">
+        <img src="https://github.com/outwalk-studios/jolt/workflows/build/badge.svg" alt="Current build status of Jolt">
     </a>
     <a href="https://github.com/outwalk-studios/jolt/blob/master/LICENSE">
         <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Jolt is released under the MIT license">
