@@ -3,8 +3,8 @@
 /* Views */
 export { View } from "./views/View";
 
-/* Router */
-export { Router } from "./router/Router";
+/* Routers */
+export { Router } from "./routers/Router";
 
 /* Requests */
 export { http } from "./requests/HttpRequests";
@@ -13,5 +13,4 @@ export { loader } from "./requests/Loaders";
 
 /* Components */
 export { Component } from "./components/Component";
-export { HamburgerMenu } from "./components/HamburgerMenu";
 

@@ -37,6 +37,16 @@ export class Component extends HTMLElement {
     }
 
     /**
+     * adds a style element to the component
+     * @param {string} content - the css string containing the styles for the component
+     */
+    addStyle(content) {
+        let tag = document.createElement("style")
+        tag.textContent = content;
+        this.append(tag);
+    }
+
+    /**
      * load the component and do inital setup for rendering
      * @abstract
      */

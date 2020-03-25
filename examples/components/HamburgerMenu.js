@@ -1,29 +1,13 @@
-/* imports */
-import { Component } from "./Component";
+/*
+    Example of creating a component that renders a hamburger menu
+    using attributes with defaults to change its style and animates when clicked
+*/
 
-/**
- * HamburgerMenu Component </br>
- * </br>
- * Attributes: </br>
- * - (optional) width : string (default: "25px") </br>
- * - (optional) height : string (default: "3px") </br>
- * - (optional) margin : string (default: "5px") </br>
- * - (optional) color : string (default: "black") </br>
- * - (optional) speed : string (default: "0.4s") </br>
- * 
- * @example <caption>Example usage of registering the HamburgerMenu Component</caption>
- * import { Component, HamburgerMenu } from "@outwalk/willow";
- * Component.register("hamburger-menu", HamburgerMenu);
- * 
- * @example <caption>Example usage of the HamburgerMenu Component</caption>
- * <hamburger-menu width="25px" height="3px" margin="5px" color="black" speed="0.4s" />
- * 
- */
-export class HamburgerMenu extends Component {
+/* create the hamburger menu component */
+class HamburgerMenu extends Component {
 
     load() {
-        let tag = document.createElement("style");
-        tag.textContent = `
+        let content = `
             #line1,
             #line2,
             #line3 {
@@ -50,9 +34,10 @@ export class HamburgerMenu extends Component {
             }
         `;
 
-        super.append(tag);
+        super.addStyle(content);
     }
 
+    /* render an html string in the render function */
     render() {
         return `
             <div id="line-container">
@@ -68,3 +53,6 @@ export class HamburgerMenu extends Component {
         container.classList.toggle("toggled");
     }
 }
+
+/* register the component with the html tag "hamburger-menu" */
+Component.register("hamburger-menu", HamburgerMenu);
