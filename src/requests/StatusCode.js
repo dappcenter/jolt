@@ -2,6 +2,7 @@
 /**
  * HTTP StatusCodes Namespace
  * @namespace StatusCode
+ * @description A collection of HTTP Status Codes.
  */
 export const StatusCode = {
     /**

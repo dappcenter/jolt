@@ -30,7 +30,7 @@
     
         <h2><span class="attribs"><span class="type-signature"></span></span>View<span class="signature">(id<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">View Class</div>
+            <div class="class-description">Creates a view for rendering pages with.</div>
         
     
 </header>
@@ -121,7 +121,7 @@
                 </td>
             
 
-            <td class="description last">the id of the element the view renders to.</td>
+            <td class="description last">The id of the element the view renders into.</td>
         </tr>
 
     
@@ -162,7 +162,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line7">line 7</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line21">line 21</a>
     </li></ul></dd>
     
 
@@ -189,6 +189,20 @@
 
 
 
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Creating a simple View</p>
+    
+    <pre class="prettyprint"><code>class SimpleView extends View {
+     
+     render() {
+         return `
+             &lt;h1>Hello World&lt;/h1>
+         `;
+     }
+}</code></pre>
 
 
 
@@ -233,8 +247,8 @@
 
 
 <div class="description">
-    render a view with specific paramters,
-this function is useful for rendering views outside of the <a href="Router.html">Router</a>
+    Renders a view with specific paramters,
+this function is useful for rendering views outside of the <a href="Router.html">Router</a>.
 </div>
 
 
@@ -296,7 +310,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">the view to render</td>
+            <td class="description last">The view to render.</td>
         </tr>
 
     
@@ -329,7 +343,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">parameters to pass to the view</td>
+            <td class="description last">The parameters to pass to the view.</td>
         </tr>
 
     
@@ -370,7 +384,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line55">line 55</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -406,7 +420,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
 
     
-    <h4 class="name" id="didLoad"><span class="type-signature">(async, abstract) </span>didLoad<span class="signature">(params)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="didLoad"><span class="type-signature">(abstract) </span>didLoad<span class="signature">(params)</span><span class="type-signature"></span></h4>
     
 
     
@@ -414,7 +428,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
 
 <div class="description">
-    do any additional setup after rendering
+    Do any additional setup after rendering.
 </div>
 
 
@@ -466,7 +480,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">the route paramters</td>
+            <td class="description last">The route's paramters.</td>
         </tr>
 
     
@@ -507,7 +521,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line47">line 47</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line61">line 61</a>
     </li></ul></dd>
     
 
@@ -551,7 +565,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
 
 <div class="description">
-    load the view and do inital setup for rendering
+    Load the view and do inital setup for rendering.
 </div>
 
 
@@ -603,7 +617,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">the route paramters</td>
+            <td class="description last">The route's paramters.</td>
         </tr>
 
     
@@ -644,7 +658,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line32">line 32</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -688,7 +702,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
 
 <div class="description">
-    render the view
+    Render the view to the page.
 </div>
 
 
@@ -740,7 +754,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">the view paramters</td>
+            <td class="description last">The route's paramters.</td>
         </tr>
 
     
@@ -781,7 +795,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line40">line 40</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line54">line 54</a>
     </li></ul></dd>
     
 
@@ -810,7 +824,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
         
 <div class="param-desc">
-    - the HTML code to be rendered
+    The HTML code to be rendered.
 </div>
 
 
@@ -847,7 +861,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
 
 <div class="description">
-    set the element that the view should render to
+    Sets the element that the view should render in.
 </div>
 
 
@@ -899,7 +913,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">the element to render to</td>
+            <td class="description last">The element to render into.</td>
         </tr>
 
     
@@ -940,7 +954,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line15">line 15</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -976,7 +990,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
 
     
-    <h4 class="name" id="setElementById"><span class="type-signature"></span>setElementById<span class="signature">(id)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setId"><span class="type-signature"></span>setId<span class="signature">(id)</span><span class="type-signature"></span></h4>
     
 
     
@@ -984,7 +998,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
 
 <div class="description">
-    set the element that the view should render to by its id
+    Sets the element that the view should render into by its id.
 </div>
 
 
@@ -1036,7 +1050,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">the id of the element to render to</td>
+            <td class="description last">The id of the element to render into.</td>
         </tr>
 
     
@@ -1077,7 +1091,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line23">line 23</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -1129,7 +1143,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Mar 25 2020 14:56:29 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Mar 25 2020 20:27:29 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

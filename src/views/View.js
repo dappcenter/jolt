@@ -1,61 +1,74 @@
-/** View Class */
+/**
+ * Creates a view for rendering pages with.
+ * @class
+ * 
+ * @example <caption>Creating a simple View</caption>
+ * 
+ * class SimpleView extends View {
+ *      
+ *      render() {
+ *          return `
+ *              <h1>Hello World</h1>
+ *          `;
+ *      }
+ * }
+ */
 export class View {
 
     /**
-     * @param {string} [id="app"] - the id of the element the view renders to.
+     * @param {string} [id="app"] - The id of the element the view renders into.
      */
     constructor(id="app") {
         this._element = document.getElementById(id);
     }
 
     /**
-     * set the element that the view should render to
-     * @param {HTMLElement} element - the element to render to
+     * Sets the element that the view should render in.
+     * @param {HTMLElement} element - The element to render into.
      */
     setElement(element) {
         this._element = element;
     }
 
     /**
-     * set the element that the view should render to by its id
-     * @param {string} id - the id of the element to render to
+     * Sets the element that the view should render into by its id.
+     * @param {string} id - The id of the element to render into.
      */
-    setElementById(id) {
+    setId(id) {
         this._element.getElementById(id);
     }
 
     /**
-     * load the view and do inital setup for rendering
-     * @param {Object} params - the route paramters
+     * Load the view and do inital setup for rendering.
+     * @param {Object} params - The route's paramters.
      * @abstract
      */
     async load() {}
 
     /**
-     * render the view
-     * @param {Object} params - the view paramters
-     * @return {string} - the HTML code to be rendered
+     * Render the view to the page.
+     * @param {Object} params - The route's paramters.
+     * @return {string} The HTML code to be rendered.
      * @abstract
      */
     async render() {}
 
     /**
-     * do any additional setup after rendering
-     * @param {Object} params - the route paramters
+     * Do any additional setup after rendering.
+     * @param {Object} params - The route's paramters.
      * @abstract
      */
-    async didLoad() {}
+    didLoad() {}
 
     /**
-     * render a view with specific paramters,
-     * this function is useful for rendering views outside of the {@link Router}
-     * @param {View} view - the view to render
-     * @param {Object} [params] - parameters to pass to the view
+     * Renders a view with specific paramters,
+     * this function is useful for rendering views outside of the {@link Router}.
+     * @param {View} view - The view to render.
+     * @param {Object} [params] - The parameters to pass to the view.
      */
     static async render(view, params={}) {
         await view.load(params);
-        let html = await view.render(params);
-        view._element.innerHTML = html;
+        view._element.innerHTML = await view.render(params);
         view.didLoad(params);
     }
 }

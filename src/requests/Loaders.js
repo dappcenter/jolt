@@ -1,13 +1,14 @@
 /**
  * Loader Namespace
  * @namespace loader
+ * @description A collection of functions to handle loading data.
  */
 export const loader = {
 
     /**
-     * load text from a url
-     * @param {string} url - url to load text from
-     * @return {Promise} - the Promise that resolves to a string
+     * Loads a text from the specified url. 
+     * @param {string} url - The url to load the text from.
+     * @return {Promise.<string>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a string.
      */
     loadText: async function (url) {
         let response = await fetch(url);
@@ -15,9 +16,9 @@ export const loader = {
     },
 
     /**
-     * load HTML from a url
-     * @param {string} url - url to the file to load html from
-     * @return {Promise} - the Promise that resolves to a string
+     * Loads HTML code from the specified url.
+     * @param {string} url - The url to load the html code from.
+     * @return {Promise.<string>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a string.
      */
     loadHTML: async function (url) {
         let response = await fetch(url);
@@ -25,9 +26,9 @@ export const loader = {
     },
 
     /**
-     * load JSON data from a url
-     * @param {string} url - the url to load JSON data from
-     * @return {Promise} - the Promsie that resolves to an Object
+     * Loads JSON data from the specified url.
+     * @param {string} url - The url to load the JSON data from.
+     * @return {Promise.<Object>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a Object.
      */
     loadJSON: async function (url) {
         let response = await fetch(url);
@@ -35,9 +36,9 @@ export const loader = {
     },
 
     /**
-     * load a Blob from a url
-     * @param {string} url - the url to load a Blob from
-     * @return {Promise} - the Promise that resolves to a Blob
+     * Loads a Blob from the specified url.
+     * @param {string} url - The url to load a Blob from.
+     * @return {Promise.<Blob>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a Blob.
      */
     loadBlob: async function (url) {
         let response = await fetch(url);
@@ -45,9 +46,9 @@ export const loader = {
     },
 
     /**
-     * load an ArrayBuffer from a url
-     * @param {string} url - the url to load an ArrayBuffer from
-     * @return {Promise} - the Promise that resolves to an ArrayBuffer
+     * Loads an ArrayBuffer from the specified url.
+     * @param {string} url - The url to load an ArrayBuffer from.
+     * @return {Promise.<Blob>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to an ArrayBuffer.
      */
     loadArrayBuffer: async function (url) {
         let response = await fetch(url);

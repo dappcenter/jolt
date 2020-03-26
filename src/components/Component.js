@@ -1,84 +1,109 @@
-/** Component Class */
+/**
+ * Create custom web components in a similar manner to how you create views.
+ * @class
+ * @extends HTMLElement
+ * 
+ * @example <caption>Creating a simple Component</caption>
+ * 
+ * class SimpleComponent extends Component {
+ *      
+ *      render() {
+ *          return `
+ *              <h1>Hello World!</h1>
+ *          `;
+ *      }
+ * }
+ * 
+ * Component.register("simple-component", SimpleComponent);
+ */
 export class Component extends HTMLElement {
 
     constructor() {
         super();
+        
+        this.attachShadow({ mode: "open" });
 
         this._elementsToAppend = [];
 
-        this.attachShadow({ mode: "open" });
-
+        /* load the component */
         this.load();
         this.shadowRoot.innerHTML = this.render();
-
         for (let element of this._elementsToAppend) {
             this.shadowRoot.appendChild(element);
         }
         this.didLoad();
 
+        /* register the onclick response */
         this.shadowRoot.addEventListener("click", this.onclick.bind(this));
     }
 
     /**
-     * appends an element to the component
-     * @param {HTMLElement} element - the element to append
+     * Adds an {@link https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement HTMLElement} to the component.
+     * @param {HTMLElement} element - The element to add to the component.
      */
-    append(element) {
+    addElement(element) {
         this._elementsToAppend.push(element);
     }
 
     /**
-     * get an internal component element by its id
-     * @param {string} id - id of the desired element
-     * @return {HTMLElement} - element containing the matching specfied id
+     * Gets an internal element by its id.
+     * @param {string} id - The id of the desired element.
+     * @return {HTMLElement} The element containing the matching specfied id.
      */
     getElement(id) {
         return this.shadowRoot.getElementById(id);
     }
 
     /**
-     * adds a style element to the component
-     * @param {string} content - the css string containing the styles for the component
+     * Adds a style element to the component.
+     * @param {string} content - The css string containing the styles for the component.
      */
     addStyle(content) {
         let tag = document.createElement("style")
         tag.textContent = content;
-        this.append(tag);
+        this.addElement(tag);
     }
 
     /**
-     * load the component and do inital setup for rendering
+     * Load the component and do inital setup for rendering.
      * @abstract
      */
     load() { }
 
     /**
-     * render the component
-     * @return {string} - the HTML code to be rendered
+     * Render the component.
+     * @return {string} The HTML code to be rendered.
      * @abstract
+     * 
+     * @example <caption>Rendering "Hello World!"</caption>
+     * 
+     * render() {
+     *      return `
+     *          <h1>Hello World!</h1>
+     *      `;
+     * }
      */
     render() { }
 
     /**
-     * do further setup after rendering the component
+     * Do any further setup after rendering the component.
      * @abstract
      */
     didLoad() { }
 
     /**
-     * add a click event listener to the component
-     * @param {MouseEvent} event - the click event that occured
+     * Add a click event listener to the component.
+     * @param {MouseEvent} event - The click event that occured.
      * @abstract
      */
     onclick() { }
 
     /**
-     * register the component to make it available as an HTML tag
-     * @param {string} name 
-     * @param {Component} component
-     * @param {Object} [params]
+     * Registers the component to make it available as an HTML tag.
+     * @param {string} name - The component tag name.
+     * @param {Component} component - the component.
      */
-    static register(name, component, params = {}) {
+    static register(name, component) {
         window.customElements.define(name, component);
     }
 }

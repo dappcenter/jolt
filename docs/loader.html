@@ -37,7 +37,7 @@
     <div class="container-overview">
     
         
-            <div class="description">Loader Namespace</div>
+            <div class="description">A collection of functions to handle loading data.</div>
         
 
         
@@ -111,7 +111,7 @@
     
 
     
-    <h4 class="name" id=".loadArrayBuffer"><span class="type-signature">(static) </span>loadArrayBuffer<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".loadArrayBuffer"><span class="type-signature">(static) </span>loadArrayBuffer<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;Blob>}</span></h4>
     
 
     
@@ -119,7 +119,7 @@
 
 
 <div class="description">
-    load an ArrayBuffer from a url
+    Loads an ArrayBuffer from the specified url.
 </div>
 
 
@@ -171,7 +171,7 @@
 
             
 
-            <td class="description last">the url to load an ArrayBuffer from</td>
+            <td class="description last">The url to load an ArrayBuffer from.</td>
         </tr>
 
     
@@ -212,7 +212,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line52">line 52</a>
+        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line53">line 53</a>
     </li></ul></dd>
     
 
@@ -241,7 +241,7 @@
 
         
 <div class="param-desc">
-    - the Promise that resolves to an ArrayBuffer
+    - The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that resolves to an ArrayBuffer.
 </div>
 
 
@@ -252,7 +252,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;Blob></span>
 
 
     </dd>
@@ -270,7 +270,7 @@
     
 
     
-    <h4 class="name" id=".loadBlob"><span class="type-signature">(static) </span>loadBlob<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".loadBlob"><span class="type-signature">(static) </span>loadBlob<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;Blob>}</span></h4>
     
 
     
@@ -278,7 +278,7 @@
 
 
 <div class="description">
-    load a Blob from a url
+    Loads a Blob from the specified url.
 </div>
 
 
@@ -330,7 +330,7 @@
 
             
 
-            <td class="description last">the url to load a Blob from</td>
+            <td class="description last">The url to load a Blob from.</td>
         </tr>
 
     
@@ -371,7 +371,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line42">line 42</a>
+        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line43">line 43</a>
     </li></ul></dd>
     
 
@@ -400,7 +400,7 @@
 
         
 <div class="param-desc">
-    - the Promise that resolves to a Blob
+    - The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that resolves to a Blob.
 </div>
 
 
@@ -411,7 +411,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;Blob></span>
 
 
     </dd>
@@ -429,7 +429,7 @@
     
 
     
-    <h4 class="name" id=".loadHTML"><span class="type-signature">(static) </span>loadHTML<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".loadHTML"><span class="type-signature">(static) </span>loadHTML<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;string>}</span></h4>
     
 
     
@@ -437,7 +437,7 @@
 
 
 <div class="description">
-    load HTML from a url
+    Loads HTML code from the specified url.
 </div>
 
 
@@ -489,7 +489,7 @@
 
             
 
-            <td class="description last">url to the file to load html from</td>
+            <td class="description last">The url to load the html code from.</td>
         </tr>
 
     
@@ -530,7 +530,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line22">line 22</a>
+        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -559,7 +559,7 @@
 
         
 <div class="param-desc">
-    - the Promise that resolves to a string
+    - The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that resolves to a string.
 </div>
 
 
@@ -570,7 +570,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;string></span>
 
 
     </dd>
@@ -588,7 +588,7 @@
     
 
     
-    <h4 class="name" id=".loadJSON"><span class="type-signature">(static) </span>loadJSON<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".loadJSON"><span class="type-signature">(static) </span>loadJSON<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;Object>}</span></h4>
     
 
     
@@ -596,7 +596,7 @@
 
 
 <div class="description">
-    load JSON data from a url
+    Loads JSON data from the specified url.
 </div>
 
 
@@ -648,7 +648,7 @@
 
             
 
-            <td class="description last">the url to load JSON data from</td>
+            <td class="description last">The url to load the JSON data from.</td>
         </tr>
 
     
@@ -689,7 +689,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line32">line 32</a>
+        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -718,7 +718,7 @@
 
         
 <div class="param-desc">
-    - the Promsie that resolves to an Object
+    - The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that resolves to a Object.
 </div>
 
 
@@ -729,7 +729,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;Object></span>
 
 
     </dd>
@@ -747,7 +747,7 @@
     
 
     
-    <h4 class="name" id=".loadText"><span class="type-signature">(static) </span>loadText<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+    <h4 class="name" id=".loadText"><span class="type-signature">(static) </span>loadText<span class="signature">(url)</span><span class="type-signature"> &rarr; {Promise.&lt;string>}</span></h4>
     
 
     
@@ -755,7 +755,7 @@
 
 
 <div class="description">
-    load text from a url
+    Loads a text from the specified url.
 </div>
 
 
@@ -807,7 +807,7 @@
 
             
 
-            <td class="description last">url to load text from</td>
+            <td class="description last">The url to load the text from.</td>
         </tr>
 
     
@@ -848,7 +848,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line12">line 12</a>
+        <a href="requests_Loaders.js.html">requests/Loaders.js</a>, <a href="requests_Loaders.js.html#line13">line 13</a>
     </li></ul></dd>
     
 
@@ -877,7 +877,7 @@
 
         
 <div class="param-desc">
-    - the Promise that resolves to a string
+    - The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> that resolves to a string.
 </div>
 
 
@@ -888,7 +888,7 @@
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type">Promise.&lt;string></span>
 
 
     </dd>
@@ -922,7 +922,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Mar 25 2020 14:56:29 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Wed Mar 25 2020 20:27:29 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

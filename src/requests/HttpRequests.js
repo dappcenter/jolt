@@ -11,13 +11,14 @@
 /**
  * Http Request Namespace
  * @namespace http
+ * @description A collection of functions to handle CRUD operations.
  */
 export const http = {
 
     /**
-     * make an HTTP get request
-     * @param {string} url - the url to request data from
-     * @return {Promise} - a promise that resolves to a {@link HttpResponse}
+     * Makes an HTTP GET request on the specified endpoint.
+     * @param {string} url - The url to make the request on.
+     * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     get: async function (url) {
         let response = await fetch(url);
@@ -32,10 +33,10 @@ export const http = {
     },
 
     /**
-     * make a HTTP POST request
-     * @param {string} url - the url to request data from
-     * @param {Object} data - the data to send to the url endpoint
-     * @return {Promise} - a promise that resolves to a {@link HttpResponse}
+     * Makes an HTTP POST request on the specified endpoint.
+     * @param {string} url - The url to make the request on.
+     * @param {Object} data - The data to send to the url endpoint.
+     * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     post: async function (url, data) {
         let response = await fetch(url, {
@@ -56,10 +57,10 @@ export const http = {
     },
 
     /**
-     * make a HTTP PUT request
-     * @param {string} url - the url to request data from
-     * @param {Object} data - the data to send to the url endpoint
-     * @return {Promise} - a promise that resolves to a {@link HttpResponse}
+     * Makes an HTTP PUT request on the specified endpoint.
+     * @param {string} url - The url to make the request on.
+     * @param {Object} data - The data to send to the url endpoint.
+     * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     put: async function (url, data) {
         let response = await fetch(url, {
@@ -80,10 +81,10 @@ export const http = {
     },
 
     /**
-     * make an HTTP PATCH request
-     * @param {string} url - the url to request data from
-     * @param {Object} data - the data to send to the url endpoint
-     * @return {Promise} - a promise that resolves to a {@link HttpResponse}
+     * Makes an HTTP PATCH request on the specified endpoint.
+     * @param {string} url - The url to make the request on.
+     * @param {Object} data - The data to send to the url endpoint.
+     * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     patch: async function (url, data) {
         let response = await fetch(url, {
@@ -104,9 +105,9 @@ export const http = {
     },
 
     /**
-     * make an HTTP DELETE request
-     * @param {string} url - the url to request data from
-     * @return {Promise} - a promise that resolves to a {@link HttpResponse}
+     * Makes an HTTP DELETE request on the specified endpoint.
+     * @param {string} url - The url to make the request on.
+     * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     delete: async function (url) {
         let response = await fetch(url, {

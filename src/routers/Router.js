@@ -1,20 +1,35 @@
-/** Router Class */
+/**
+ * Creates a Router that handles parsing parameterized routes,
+ * and rendering the view associated with the current url.
+ * @class
+ * 
+ * @example <caption>Creating a simple Router with a default route</caption>
+ * 
+ * const router = new Router({
+ *      "/": view;
+ * });
+ * 
+ * router.listen();
+ */
 export class Router {
 
     /**
-     * @param {Object.<string, View>} routes - the routes to handle routing for
+     * @param {Object.<string, View>} routes - The mapping of views to their routes.
      */
     constructor(routes) {
         this._routes = routes;
 
         /* parse the routes into usable data for routing */
         this._parsedRoutes = this._parseRoutes();
+
+        /* default routing mechanism set to PushState routing */
+        this._useHashRouting = false;
     }
 
     /**
-     * add a route to the router's route mapping
-     * @param {string} route - the route to add
-     * @param {View} view - the view to render when the route is requested
+     * Adds a route to the router's route mapping.
+     * @param {string} route - The route to add to the mapping.
+     * @param {View} view - The view to render when the route is requested.
      */
     on(route, view) {
         this._routes[route] = view;
@@ -22,8 +37,8 @@ export class Router {
     }
 
     /**
-     * navigate to the desired route (not applicable when using hash routing)
-     * @param {string} pathname - the pathname to navigate to
+     * Navigates to the desired route. (not applicable when using hash routing)
+     * @param {string} pathname - The pathname to navigate to.
      */
     navigate(pathname) {
         window.history.pushState({}, pathname, window.location.origin + pathname);
@@ -31,13 +46,13 @@ export class Router {
     }
 
     /**
-     * start the router
-     * @param {boolean} [useHashRouting=false] - should the router use the hash routing method
+     * Starts the router's routing mechanism.
+     * @param {boolean} [useHashRouting=false] - Enable the Hash Routing mechanism.
      */
     listen(useHashRouting = false) {
-        this.useHashRouting = useHashRouting;
+        this._useHashRouting = useHashRouting;
 
-        if (this.useHashRouting) {
+        if (this._useHashRouting) {
             /* hash routing setup */
             window.addEventListener("hashchange", () => {
                 this._matchUrlToRoute(this._getCurrentUrl());
@@ -54,21 +69,21 @@ export class Router {
     }
 
     /**
-     * set the view to be rendered when the router can not find a matching route
-     * @param {View} view - the view to be rendered
+     * Sets the view to be rendered when the router can not find a matching route.
+     * @param {View} view - The view to be rendered on ERROR 404.
      */
     setRouteNotFound(view) {
         this._routes["ERROR_404"] = view;
     }
 
     /**
-     * get the current url to determine the route with 
-     * this function parses the hash based url and history url to match the route url patterns
+     * Gets the current url to determine the route with. 
+     * This function parses the hash based url and history url to match the route url patterns.
      * @private
      */
     _getCurrentUrl() {
         /* if hash routing is being used, grab the hash pathname, if not, get the url pathname */
-        let url = (this.useHashRouting ? (window.location.hash.slice(1) || "/") : (window.location.pathname || "/")).toLowerCase();
+        let url = (this._useHashRouting ? (window.location.hash.slice(1) || "/") : (window.location.pathname || "/")).toLowerCase();
 
         /* if the url ends with '/' but has a pathname, trim the '/' off the end */
         if (url.endsWith("/") && url.length > 1) {
@@ -80,7 +95,7 @@ export class Router {
     }
 
     /**
-     * parse the routes into data that can be used for routing
+     * Parses the routes into data that can be used for routing.
      * @private
      */
     _parseRoutes() {
@@ -96,9 +111,9 @@ export class Router {
     }
 
     /**
-     * get the url parameters from the current route
-     * @param {Object} route - the route to get the parameters from
-     * @param {RegExp} regex - the regex containing the parameter values
+     * Gets and parses the url parameters for the current route.
+     * @param {Object} route - The route to get the parameters from.
+     * @param {RegExp} regex - The regex containing the parameter values.
      * @private 
      */
     _getUrlParameters(route, regex) {
@@ -118,8 +133,8 @@ export class Router {
     }
 
     /**
-     * match a specified url to a route and render the matching route
-     * @param {string} url - the url to match to a route
+     * Matches a specified url to a route and renders the matching route.
+     * @param {string} url - The url to match to a route.
      * @private
      */
     async _matchUrlToRoute(url) {
