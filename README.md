@@ -33,7 +33,8 @@ Install using a [CDN](https://unpkg.com/jolt) and script tag:
 <script src="https://unpkg.com/jolt"></script>
 ```
 
-Documentation is availiable [here](https://outwalk-studios.github.io/jolt/).
+Documentation is availiable [here](https://outwalk-studios.github.io/jolt/). </br>
+Examples are availiable [here](https://github.com/outwalk-studios/jolt/tree/master/examples).
 
 ---
 
@@ -58,7 +59,7 @@ const router = new Router({
 router.listen();
 ```
 
-Going to `https://mywebsite.com/home` will render the associated view.
+Going to `https://example.com/home` will render the associated view.
 
 ---
 
@@ -86,7 +87,7 @@ router.listen();
 ```
 
 The `load` and `render` functions in UserView would recieve a params object containing the value of the parameter. </br>
-If the url was `https://mywebsite.com/users/myuser`, the params object would be `{user: "myuser"}`.
+If the url was `https://example.com/users/myuser`, the params object would be `{user: "myuser"}`.
 
 
 You can learn more about routing in Jolt [here](https://outwalk-studios.github.io/jolt/Router.html).
