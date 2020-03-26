@@ -43,7 +43,7 @@ export class View {
      * @param {Object} params - The route's paramters.
      * @abstract
      */
-    async load() {}
+    load() {}
 
     /**
      * Render the view to the page.
@@ -51,7 +51,7 @@ export class View {
      * @return {string} The HTML code to be rendered.
      * @abstract
      */
-    async render() {}
+    render() {}
 
     /**
      * Do any additional setup after rendering.
