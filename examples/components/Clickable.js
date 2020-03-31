@@ -19,8 +19,16 @@ class ClickableComponent extends Component {
         `;
     }
 
-    onclick() {
-        this.clicked++;
+    didLoad() {
+        super.addEventListener("click", (e) => {
+            e.preventDefault();
+            this.clicked++;
+        });
+
+        super.addEventListener("touchstart", () => {
+            e.preventDefault();
+            this.clicked++;
+        });
     }
 }
 
