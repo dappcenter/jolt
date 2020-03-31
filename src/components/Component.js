@@ -92,7 +92,7 @@ export class Component extends HTMLElement {
      * Add a click event listener to the component.
      * @param {MouseEvent} event - The click event that occured.
      * @abstract
-     * @deprecated onlick should not be used anymore and instead custom event listeners should be assigned in the didLoad function.
+     * @deprecated onclick should not be used anymore and instead custom event listeners should be assigned in the didLoad function.
      */
     onclick() { }
 
