@@ -11,7 +11,7 @@ export const loader = {
      * @return {Promise.<string>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a string.
      */
     loadText: async function (url) {
-        let response = await fetch(url);
+        const response = await fetch(url);
         return await response.text();
     },
 
@@ -21,7 +21,7 @@ export const loader = {
      * @return {Promise.<string>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a string.
      */
     loadHTML: async function (url) {
-        let response = await fetch(url);
+        const response = await fetch(url);
         return await response.text();
     },
 
@@ -31,7 +31,7 @@ export const loader = {
      * @return {Promise.<Object>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a Object.
      */
     loadJSON: async function (url) {
-        let response = await fetch(url);
+        const response = await fetch(url);
         return await response.json();
     },
 
@@ -41,7 +41,7 @@ export const loader = {
      * @return {Promise.<Blob>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a Blob.
      */
     loadBlob: async function (url) {
-        let response = await fetch(url);
+        const response = await fetch(url);
         return await response.blob();
     },
 
@@ -51,7 +51,7 @@ export const loader = {
      * @return {Promise.<Blob>} - The {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to an ArrayBuffer.
      */
     loadArrayBuffer: async function (url) {
-        let response = await fetch(url);
+        const response = await fetch(url);
         return await response.arrayBuffer();
     }
 } 

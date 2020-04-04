@@ -28,7 +28,7 @@
 
 <header>
     
-        <h2><span class="attribs"><span class="type-signature"></span></span>View<span class="signature">(id<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
+        <h2><span class="attribs"><span class="type-signature"></span></span>View<span class="signature">(elementId<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h2>
         
             <div class="class-description">Creates a view for rendering pages with.</div>
         
@@ -45,7 +45,7 @@
     
 
     
-    <h4 class="name" id="View"><span class="type-signature"></span>new View<span class="signature">(id<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="View"><span class="type-signature"></span>new View<span class="signature">(elementId<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
     
 
     
@@ -89,7 +89,7 @@
 
         <tr>
             
-                <td class="name"><code>id</code></td>
+                <td class="name"><code>elementId</code></td>
             
 
             <td class="type">
@@ -121,7 +121,7 @@
                 </td>
             
 
-            <td class="description last">The id of the element the view renders into.</td>
+            <td class="description last">The id of the element the view renders in.</td>
         </tr>
 
     
@@ -162,7 +162,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line21">line 21</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line24">line 24</a>
     </li></ul></dd>
     
 
@@ -229,6 +229,82 @@
     
 
     
+        <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="state"><span class="type-signature"></span>state<span class="type-signature"> :<a href="State.html">State</a></span></h4>
+
+
+
+
+<div class="description">
+    The state of the view.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type"><a href="State.html">State</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+        
+    
 
     
         <h3 class="subsection-title">Methods</h3>
@@ -247,8 +323,7 @@
 
 
 <div class="description">
-    Renders a view with specific paramters,
-this function is useful for rendering views outside of the <a href="Router.html">Router</a>.
+    Renders a view.
 </div>
 
 
@@ -384,6 +459,441 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line91">line 91</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addStyle"><span class="type-signature"></span>addStyle<span class="signature">(content)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Adds a style element to the view
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>content</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The css string containing the styles for the view.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line42">line 42</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="didLoad"><span class="type-signature">(abstract) </span>didLoad<span class="signature">(params<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Do any additional setup after rendering.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The route's paramters.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line84">line 84</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="load"><span class="type-signature">(abstract) </span>load<span class="signature">(params<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Load the view and do inital setup for rendering.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last">The route's paramters.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
         <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line69">line 69</a>
     </li></ul></dd>
     
@@ -420,281 +930,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
 
     
-    <h4 class="name" id="didLoad"><span class="type-signature">(abstract) </span>didLoad<span class="signature">(params)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Do any additional setup after rendering.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The route's paramters.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line61">line 61</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="load"><span class="type-signature">(abstract) </span>load<span class="signature">(params)</span><span class="type-signature"></span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Load the view and do inital setup for rendering.
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>params</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The route's paramters.</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line46">line 46</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="render"><span class="type-signature">(abstract) </span>render<span class="signature">(params)</span><span class="type-signature"> &rarr; {string}</span></h4>
+    <h4 class="name" id="render"><span class="type-signature">(abstract) </span>render<span class="signature">(params<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {string}</span></h4>
     
 
     
@@ -726,6 +962,8 @@ this function is useful for rendering views outside of the <a href="Router.html"
         <th>Type</th>
 
         
+        <th>Attributes</th>
+        
 
         
 
@@ -750,6 +988,16 @@ this function is useful for rendering views outside of the <a href="Router.html"
             
             </td>
 
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
             
 
             
@@ -795,7 +1043,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line54">line 54</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line77">line 77</a>
     </li></ul></dd>
     
 
@@ -913,7 +1161,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">The element to render into.</td>
+            <td class="description last">The element to render in.</td>
         </tr>
 
     
@@ -954,7 +1202,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line29">line 29</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -990,7 +1238,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
 
     
-    <h4 class="name" id="setId"><span class="type-signature"></span>setId<span class="signature">(id)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="setElementById"><span class="type-signature"></span>setElementById<span class="signature">(elementId)</span><span class="type-signature"></span></h4>
     
 
     
@@ -998,7 +1246,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
 
 <div class="description">
-    Sets the element that the view should render into by its id.
+    Sets the element that the view should render in by its id.
 </div>
 
 
@@ -1034,7 +1282,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
         <tr>
             
-                <td class="name"><code>id</code></td>
+                <td class="name"><code>elementId</code></td>
             
 
             <td class="type">
@@ -1050,7 +1298,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
 
             
 
-            <td class="description last">The id of the element to render into.</td>
+            <td class="description last">The id of the element to render in.</td>
         </tr>
 
     
@@ -1091,7 +1339,7 @@ this function is useful for rendering views outside of the <a href="Router.html"
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line37">line 37</a>
+        <a href="views_View.js.html">views/View.js</a>, <a href="views_View.js.html#line60">line 60</a>
     </li></ul></dd>
     
 
@@ -1137,13 +1385,13 @@ this function is useful for rendering views outside of the <a href="Router.html"
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="http.html">http</a></li><li><a href="loader.html">loader</a></li><li><a href="StatusCode.html">StatusCode</a></li></ul><h3>Classes</h3><ul><li><a href="Component.html">Component</a></li><li><a href="Router.html">Router</a></li><li><a href="View.html">View</a></li></ul><h3><a href="global.html">Global</a></h3>
+    <h2><a href="index.html">Home</a></h2><h3>Namespaces</h3><ul><li><a href="http.html">http</a></li><li><a href="loader.html">loader</a></li><li><a href="StatusCode.html">StatusCode</a></li></ul><h3>Classes</h3><ul><li><a href="Component.html">Component</a></li><li><a href="Router.html">Router</a></li><li><a href="State.html">State</a></li><li><a href="View.html">View</a></li></ul><h3><a href="global.html">Global</a></h3>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Mon Mar 30 2020 19:33:19 GMT-0700 (Pacific Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Fri Apr 03 2020 17:50:39 GMT-0700 (Pacific Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

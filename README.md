@@ -119,6 +119,33 @@ class MyView extends View {
 
 this view would render `Hello World!` to the page.
 
+Views have a `state` property for managing the state of the view. Whenever the state is edited it will trigger a re-render of the view.
+Rendering views can be performance intensive so it is advised to keep state changes to a minimum.
+
+You can use the state property as a normal JavaScript Object or use the [State](https://outwalk-studios.github.io/jolt/State.html) class functions.
+
+**Example:**
+```js
+class StatefulView extends View {
+
+    load() {
+        this.state.color = "red";
+    }
+
+    render() {
+        return `
+            <h1 id="message" style="color: ${this.state.color};">Hello World</h1>
+        `;
+    }
+
+    didLoad() {
+        document.getElementById("message").onclick = () => {
+            this.state.color = "blue";
+        }
+    }
+}
+```
+
 You can learn more about Views in Jolt [here](https://outwalk-studios.github.io/jolt/View.html).
 
 ---
@@ -153,7 +180,7 @@ You can learn more about Components in Jolt [here](https://outwalk-studios.githu
 
 ## Why?
 
-Jolt was developed to make developing web apps easy with any build process you prefer. Jolt is lightweight and effienctly renders views to the page for powerful web apps. </br>
+Jolt was developed to make developing web apps easy with your preffered build process. Jolt is lightweight and effienctly renders views to the page for powerful web apps. </br>
 When building web apps using Jolt, you can use your existing HTML, CSS, and JavaScript skills to build powerful and responsive web apps.
 
 ---

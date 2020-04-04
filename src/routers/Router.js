@@ -37,6 +37,14 @@ export class Router {
     }
 
     /**
+     * Sets the view to be rendered when the router can not find a matching route.
+     * @param {View} view - The view to be rendered on ERROR 404.
+     */
+    setRouteNotFound(view) {
+        this._routes["ERROR_404"] = view;
+    }
+
+    /**
      * Navigates to the desired route. (not applicable when using hash routing)
      * @param {string} pathname - The pathname to navigate to.
      */
@@ -69,11 +77,16 @@ export class Router {
     }
 
     /**
-     * Sets the view to be rendered when the router can not find a matching route.
-     * @param {View} view - The view to be rendered on ERROR 404.
+     * Renders a view, calling its abstract functions.
+     * @param {View} view - The view to render.
+     * @param {Object} [params] - The route paramters.
+     * @private
      */
-    setRouteNotFound(view) {
-        this._routes["ERROR_404"] = view;
+    async _renderView(view, params={}) {
+        view._params = params;
+        await view.load(params);
+        view._element.innerHTML = await view.render(params);
+        await view.didLoad(params);
     }
 
     /**
@@ -83,7 +96,7 @@ export class Router {
      */
     _getCurrentUrl() {
         /* if hash routing is being used, grab the hash pathname, if not, get the url pathname */
-        let url = (this._useHashRouting ? (window.location.hash.slice(1) || "/") : (window.location.pathname || "/")).toLowerCase();
+        const url = (this._useHashRouting ? (window.location.hash.slice(1) || "/") : (window.location.pathname || "/")).toLowerCase();
 
         /* if the url ends with '/' but has a pathname, trim the '/' off the end */
         if (url.endsWith("/") && url.length > 1) {
@@ -117,8 +130,8 @@ export class Router {
      * @private 
      */
     _getUrlParameters(route, regex) {
-        let params = {};
-        let fragments = route.routepath.split("/");
+        const params = {};
+        const fragments = route.routepath.split("/");
         let index = 1;
 
         /* if the fragment starts with ':' record its value as a paramater */
@@ -137,20 +150,19 @@ export class Router {
      * @param {string} url - The url to match to a route.
      * @private
      */
-    async _matchUrlToRoute(url) {
+    _matchUrlToRoute(url) {
         let regex = null;
 
+        /* check for a matching route */
         for (let route of this._parsedRoutes) {
             regex = url.match(route.url);
             if (regex) {
 
-                /* render the view */
-                let params = this._getUrlParameters(route, regex);
-                let view = this._routes[route.routepath];
+                /* set the new route parameters */
+                const params = this._getUrlParameters(route, regex);
 
-                await view.load(params);
-                view._element.innerHTML = await view.render(params);
-                view.didLoad(params);
+                /* render the view */
+                this._renderView(this._routes[route.routepath], params);
 
                 return;
             }
@@ -158,7 +170,7 @@ export class Router {
 
         /* handle 404 errors */
         if (!regex) {
-            let view = this._routes["ERROR_404"];
+            const view = this._routes["ERROR_404"];
 
             /* if no error view is defined, just write the error text to the page */
             if (!view) {
@@ -167,11 +179,7 @@ export class Router {
             }
 
             /* render the error view */
-            let params = { url: window.location.href };
-
-            await view.load(params);
-            view._element.innerHTML = await view.render(params);
-            view.didLoad(params);
+            this._renderView(view);
         }
     }
 }

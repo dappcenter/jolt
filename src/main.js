@@ -1,5 +1,8 @@
 /* Jolt API */
 
+/* Common */
+export { State } from "./common/State";
+
 /* Views */
 export { View } from "./views/View";
 

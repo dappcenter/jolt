@@ -1,5 +1,8 @@
+/* imports */
+import { State } from "../common/State";
+
 /**
- * Create custom web components in a similar manner to how you create views.
+ * Create custom WebComponents in a similar manner to how you create views.
  * @class
  * @extends HTMLElement
  * 
@@ -20,12 +23,13 @@ export class Component extends HTMLElement {
 
     constructor() {
         super();
-        
+        /* open the Shadow DOM */
         this.attachShadow({ mode: "open" });
 
+        /* container for elements to be added to the page */
         this._elementsToAppend = [];
 
-        /* load the component */
+        /* load and render the component */
         this.load();
         this.shadowRoot.innerHTML = this.render();
         for (let element of this._elementsToAppend) {
@@ -44,11 +48,11 @@ export class Component extends HTMLElement {
 
     /**
      * Gets an internal element by its id.
-     * @param {string} id - The id of the desired element.
+     * @param {string} elementId - The id of the desired element.
      * @return {HTMLElement} The element containing the matching specfied id.
      */
-    getElement(id) {
-        return this.shadowRoot.getElementById(id);
+    getElement(elementId) {
+        return this.shadowRoot.getElementById(elementId);
     }
 
     /**
@@ -56,9 +60,9 @@ export class Component extends HTMLElement {
      * @param {string} content - The css string containing the styles for the component.
      */
     addStyle(content) {
-        let tag = document.createElement("style")
-        tag.textContent = content;
-        this.addElement(tag);
+        const style = document.createElement("style");
+        style.textContent = content;
+        this.addElement(style);
     }
 
     /**
@@ -87,14 +91,6 @@ export class Component extends HTMLElement {
      * @abstract
      */
     didLoad() { }
-
-    /**
-     * Add a click event listener to the component.
-     * @param {MouseEvent} event - The click event that occured.
-     * @abstract
-     * @deprecated onclick should not be used anymore and instead custom event listeners should be assigned in the didLoad function.
-     */
-    onclick() { }
 
     /**
      * Registers the component to make it available as an HTML tag.

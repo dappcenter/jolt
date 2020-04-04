@@ -21,7 +21,7 @@ export const http = {
      * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     get: async function (url) {
-        let response = await fetch(url);
+        const response = await fetch(url);
 
         return {
             headers: response.headers,
@@ -39,7 +39,7 @@ export const http = {
      * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     post: async function (url, data) {
-        let response = await fetch(url, {
+        const response = await fetch(url, {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -63,7 +63,7 @@ export const http = {
      * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     put: async function (url, data) {
-        let response = await fetch(url, {
+        const response = await fetch(url, {
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
@@ -87,7 +87,7 @@ export const http = {
      * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     patch: async function (url, data) {
-        let response = await fetch(url, {
+        const response = await fetch(url, {
             method: "PATCH",
             body: JSON.stringify(data),
             headers: {
@@ -110,7 +110,7 @@ export const http = {
      * @return {Promise.<HttpResponse>} A {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Promise} that resolves to a {@link HttpResponse}.
      */
     delete: async function (url) {
-        let response = await fetch(url, {
+        const response = await fetch(url, {
             method: "DELETE"
         });
 
