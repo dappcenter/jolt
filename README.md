@@ -47,7 +47,7 @@ class MyView extends View {
 
     render() {
         return `
-            <h1>Hello World</h1>
+            <h1>Hello World!</h1>
         `;
     }
 }
@@ -75,7 +75,7 @@ If you are unable to configure the web server or need to support old browsers th
 you can use the Hash Routing method by passing `true` to the Router's `listen` function.
 
 
-Route fragments beginning with `:` are parameters, they accept any value in the url and that value is saved to the fragment name.
+Route fragments beginning with `:` are parameters, they accept any value in the url and the value is assigned to the fragment name.
 
 **Example:**
 ```js
@@ -111,7 +111,7 @@ class MyView extends View {
 
     render() {
         return `
-            <h1>Hello ${this.word}!</h1>
+            <h1>Hello ${this.world}!</h1>
         `;
     }
 }
@@ -180,7 +180,7 @@ You can learn more about Components in Jolt [here](https://outwalk-studios.githu
 
 ## Why?
 
-Jolt was developed to make developing web apps easy with your preffered build process. Jolt is lightweight and effienctly renders views to the page for powerful web apps. </br>
+Jolt was developed to make developing web apps easy with your preferred build process. Jolt is lightweight and efficiently renders views to the page for powerful web apps. </br>
 When building web apps using Jolt, you can use your existing HTML, CSS, and JavaScript skills to build powerful and responsive web apps.
 
 ---
