@@ -48,9 +48,18 @@ class HamburgerMenu extends Component {
         `;
     }
 
-    onclick() {
+    didLoad() {
         let container = super.getElement("line-container");
-        container.classList.toggle("toggled");
+
+        super.addEventListener("click", (e) => {
+            e.preventDefault();
+            container.classList.toggle("toggled");
+        });
+
+        super.addEventListener("touchstart", () => {
+            e.preventDefault();
+            container.classList.toggle("toggled");
+        });
     }
 }
 
