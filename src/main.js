@@ -10,9 +10,9 @@ export { View } from "./views/View";
 export { Router } from "./routers/Router";
 
 /* Requests */
-export { http } from "./requests/HttpRequests";
-export { StatusCode } from "./requests/StatusCode";
 export { loader } from "./requests/Loaders";
+export { request } from "./requests/Requests";
+export { StatusCode } from "./requests/StatusCode";
 
 /* Components */
 export { Component } from "./components/Component";
