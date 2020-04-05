@@ -5,7 +5,7 @@ import { State } from "../common/State";
  * Creates a view for rendering pages with.
  * @class
  * 
- * @example <caption>Creating a simple View</caption>
+ * @example <caption>Creating a simple view</caption>
  * 
  * class SimpleView extends View {
  *      
@@ -19,10 +19,11 @@ import { State } from "../common/State";
 export class View {
 
     /**
-     * @param {string} [elementId="app"] - The id of the element the view renders in.
+     * If no container element is specified it looks for an element with the id "app".
+     * @param {HTMLElement} [container] - The element the view container element.
      */
-    constructor(elementId = "app") {
-        this._element = document.getElementById(elementId);
+    constructor(container = document.querySelector("#app")) {
+        this._container = container;
         this._params = {};
 
         /**
@@ -30,13 +31,20 @@ export class View {
          * @type {State}
          */
         this.state = State.create(() => {
-            this._element.innerHTML = this.render(this._params);
-            this.didLoad(this._params);
+            this._updateContainer(this.render(this._params));
         });
     }
 
     /**
-     * Adds a style element to the view
+     * Sets the view's container element.
+     * @param {HTMLElement} container - The view's new container element.
+     */
+    setContainer(container) {
+        this._container = container;
+    }
+
+    /**
+     * Adds a style element to the view.
      * @param {string} content - The css string containing the styles for the view.
      */
     addStyle(content) {
@@ -46,52 +54,60 @@ export class View {
     }
 
     /**
-     * Sets the element that the view should render in.
-     * @param {HTMLElement} element - The element to render in.
-     */
-    setElement(element) {
-        this._element = element;
-    }
-
-    /**
-     * Sets the element that the view should render in by its id.
-     * @param {string} elementId - The id of the element to render in.
-     */
-    setElementById(elementId) {
-        this._element = document.getElementById(elementId);
-    }
-
-    /**
-     * Load the view and do inital setup for rendering.
-     * @param {Object} [params] - The route's paramters.
+     * Loads the view and does initial setup for rendering.
+     * @param {Object} [params] - The view's paramters.
      * @abstract
      */
     load() { }
 
     /**
-     * Render the view to the page.
-     * @param {Object} [params] - The route's paramters.
-     * @return {string} The HTML code to be rendered.
-     * @abstract
+     * Renders the view to the container element.
+     * @param {Object} [params] - The view's paramters.
      */
     render() { }
 
     /**
-     * Do any additional setup after rendering.
-     * @param {Object} [params] - The route's paramters.
-     * @abstract
+     * Does any additional setup after rendering.
+     * @param {Object} [params] - The view's paramters. 
      */
     didLoad() { }
 
     /**
+     * Updates the container with the content to render.
+     * @param {string} - The content to update the container with.
+     * @private
+     */
+    _updateContainer(content) {
+        this._container.innerHTML = content;
+        this._handleEventBinding();
+    }
+
+    /**
+     * Parses the container's elements and handles all event binding attributes.
+     * @private
+     */
+    _handleEventBinding() {
+        const elements = this._container.querySelectorAll("*");
+
+        for (let element of elements) {
+            for (let attribute of element.attributes) {
+                if (attribute.localName.startsWith("@")) {
+                    const eventName = attribute.localName.substring(1);
+                    element.addEventListener(eventName, this[attribute.value].bind(this));
+                }
+            }
+        }
+    }
+
+    /**
      * Renders a view.
      * @param {View} view - The view to render.
-     * @param {Object} [params] - The parameters to pass to the view.
+     * @param {Object} [params] - The view's parameters.
      */
     static async render(view, params = {}) {
         view._params = params;
         await view.load(params);
-        view._element.innerHTML = await view.render(params);
-        await view.didLoad(params);
+        view._updateContainer(view.render(params));
+        view.didLoad(params);
     }
 }

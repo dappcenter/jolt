@@ -1,3 +1,5 @@
+import { View } from "../views/View";
+
 /**
  * Creates a Router that handles parsing parameterized routes,
  * and rendering the view associated with the current url.
@@ -77,19 +79,6 @@ export class Router {
     }
 
     /**
-     * Renders a view, calling its abstract functions.
-     * @param {View} view - The view to render.
-     * @param {Object} [params] - The route paramters.
-     * @private
-     */
-    async _renderView(view, params={}) {
-        view._params = params;
-        await view.load(params);
-        view._element.innerHTML = await view.render(params);
-        await view.didLoad(params);
-    }
-
-    /**
      * Gets the current url to determine the route with. 
      * This function parses the hash based url and history url to match the route url patterns.
      * @private
@@ -162,7 +151,7 @@ export class Router {
                 const params = this._getUrlParameters(route, regex);
 
                 /* render the view */
-                this._renderView(this._routes[route.routepath], params);
+                View.render(this._routes[route.routepath], params);
 
                 return;
             }
@@ -179,7 +168,7 @@ export class Router {
             }
 
             /* render the error view */
-            this._renderView(view);
+            View.render(view);
         }
     }
 }
